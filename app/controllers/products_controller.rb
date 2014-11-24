@@ -2,9 +2,14 @@ class ProductsController < ApplicationController
   def index
     @most_recent_product_order = Product.newest_first
     @products = if params[:search]
-      Product.where("LOWER(name) LIKE LOWER(?)", "%#{params[:search]}%")
+      Product.where("LOWER(name) LIKE LOWER(?)", "%#{params[:search]}%")# SQL to allaw us to search for part of the word and receive the matching patterns of words back
     else
   	 Product.all
+    end
+
+    #to get our page to respond to ajax
+    if request.xhr?
+      render @products
     end
   end
 
