@@ -1,0 +1,26 @@
+<h1>Product Information</h1>
+
+
+<p><%= @product.name %> <%= @product.category %> <%= @product.description %> <%= @product.formatted_price %></p>
+
+<% if @current_user %>
+
+	<h3>Reviews</h3>
+
+	<%= render 'review_display' %>
+
+	<h4>New Review</h4>
+
+	<%= render 'review_form' %>	
+
+<% else %>
+	<p>Please <%= link_to "Log in", new_session_path %> to add a review.</p>
+<% end %>
+
+<%= link_to 'Back', products_path %>
+
+
+
+
+
+
