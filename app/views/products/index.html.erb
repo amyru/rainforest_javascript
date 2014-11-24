@@ -1,17 +1,11 @@
 <h1>ALL Products</h1>
 
-<% @products.each do |product| %>
+<%= form_tag products_path, method: :get, authentication: :false, id: 'search-form' do %>
+	<%= text_field_tag :search, params[:search] %>
+	<%= submit_tag 'Search' %>
+<% end %>
 
-	<div class="media">
-	  <a class="media-left media-middle" href="#">
-	    <img src="http://www.apetogentleman.com/wp-content/uploads/2010/08/neals-yard-remedies-soothing-starflower.jpg" width="64px" height="64px">
-	  </a>
-	  <div class="media-body">
-	    <h4 class="media-heading"><%= product.name %></h4>
-	    <p><%= product.category %></p>
-	    <p><%= product.description %></p>
-	    <p><%= product.formatted_price %></p>
-	  </div>
-	</div>
+<div id="products">
+	<%= render @products %>
+</div>
 
-<%end%>

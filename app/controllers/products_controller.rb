@@ -1,7 +1,11 @@
 class ProductsController < ApplicationController
   def index
     @most_recent_product_order = Product.newest_first
-  	@products = Product.all
+    @products = if params[:search]
+      Product.where("LOWER(name) LIKE LOWER(?)", "%#{params[:search]}%")
+    else
+  	 Product.all
+    end
   end
 
   def show
