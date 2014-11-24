@@ -7,9 +7,10 @@ class ProductsController < ApplicationController
   	 Product.all
     end
 
-    #to get our page to respond to ajax
-    if request.xhr?
-      render @products
+    #to get our page to respond to ajax and need respond to so server can respond to something
+    respond to do |format|
+      format.html
+      format.js
     end
   end
 

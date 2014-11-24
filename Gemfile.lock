@@ -153,7 +153,6 @@ DEPENDENCIES
   awesome_print
   bcrypt-ruby (~> 3.1.5)
   bootstrap-sass (~> 3.3.0)
-  coffee-rails (~> 4.0.0)
   factory_girl_rails
   jbuilder (~> 2.0)
   jquery-rails
