@@ -1,0 +1,13 @@
+
+<!-- renders a helpful message with numbers of displayed vs. total entries -->
+
+<hr/>
+
+<ul>
+  <div id="products">
+		<%= render @products %>
+	</div>
+</ul>
+
+<!-- outputs several pagination links such as « First ‹ Prev ... 2 3 4 5 6 7 8 9 10 ... Next › Last » -->
+<%= paginate @products %>

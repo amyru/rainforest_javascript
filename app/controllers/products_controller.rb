@@ -1,17 +1,18 @@
 class ProductsController < ApplicationController
   def index
-    @most_recent_product_order = Product.newest_first
     @products = if params[:search]
       Product.where("LOWER(name) LIKE LOWER(?)", "%#{params[:search]}%")# SQL to allaw us to search for part of the word and receive the matching patterns of words back
     else
-  	 Product.all
-    end
+  	 Product.order('products.created_at DESC')
+    end.page(params[:page])
 
-    #to get our page to respond to ajax and need respond to so server can respond to something
-    respond to do |format|
+    #to get our page to respond to ajax and need 'respond' ,so server can respond to something.
+    respond_to do |format|
       format.html
       format.js
     end
+
+    # @products = Product.order('products.created_at DESC').page(params[:page])
   end
 
   def show
@@ -48,6 +49,6 @@ class ProductsController < ApplicationController
 
 	private
 	def product_params
-		params.require(:product).permit(:name, :description, :price_by_cents, :category)
+		params.require(:product).permit(:name, :description, :price_in_cents, :category)
 	end
 end

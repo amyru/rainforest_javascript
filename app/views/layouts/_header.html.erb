@@ -34,6 +34,7 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
+          <li><%= link_to "Add a product", new_product_path %></li>
           <li><%= link_to "Log out", session_path("current"), :method => :delete %><li>
           <li><%= link_to "My Profile", profile_path %></li>
         <% else %>
