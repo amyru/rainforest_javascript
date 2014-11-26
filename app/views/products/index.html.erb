@@ -1,6 +1,6 @@
 <h1>ALL Products</h1>
 
-<%= form_tag products_path, method: :get, authentication: :false, id: 'search-form' do %>
+<%= form_tag products_path, method: :get, authentication: :false, id: 'search-form', :remote => true do %>
 	<%= text_field_tag :search, params[:search] %>
 	<%= submit_tag 'Search' %>
 <% end %>
@@ -11,4 +11,4 @@
 	<%= render @products %>
 </div>
 
-<div id="products-pagination"><%= paginate @products %></div>
+<div id="products-pagination"><%= paginate @products %></div> <!-- in paginate @products there is a class pagination that we can call (.pagination) -->
