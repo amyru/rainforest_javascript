@@ -1,1 +1,2 @@
-$('#products').html("<%= j(render @products) %>"); //this page does the same as .done() method if we hat added this to products.js .get function.
+$('#products').append("<%= j(render @products) %>"); //this page does the same as .done() method if we hat added this to products.js .get function.
+$('#products-pagination').html("<%= j(paginate @products) %>");

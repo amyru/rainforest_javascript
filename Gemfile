@@ -28,7 +28,7 @@ gem 'sass-rails', '>= 3.2'
 #for bootstrap
 gem 'autoprefixer-rails'
 # for pagination
-gem 'kaminari', '~> 0.16.1'
+gem 'kaminari'
 
 gem 'faker'
 

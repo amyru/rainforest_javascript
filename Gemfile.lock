@@ -162,7 +162,7 @@ DEPENDENCIES
   faker
   jbuilder (~> 2.0)
   jquery-rails
-  kaminari (~> 0.16.1)
+  kaminari
   pry-rails
   quiet_assets
   rails (= 4.1.7)
