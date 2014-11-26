@@ -1,2 +1,7 @@
-$('#products').append("<%= j(render @products) %>"); //this page does the same as .done() method if we hat added this to products.js .get function.
+<% if params[:page] %>
+	$('#products').append("<%= j(render @products) %>"); //this page does the same as .done() method if we hat added this to products.js .get function.
+<% else %>
+	$('#products').html("<%= j(render @products) %>"); 
+<% end %>
+
 $('#products-pagination').html("<%= j(paginate @products) %>");
