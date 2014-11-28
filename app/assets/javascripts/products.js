@@ -1,4 +1,4 @@
-$(document).on('ready page:load', function() {
+$(document).on('ready page:load', function() { //need 'ready page:load' and not .ready so that tourbolinks works and responds with ajax requests to the server
   $('#search-form').submit(function(event) {
   	event.preventDeafault();
   	var searchValue = $('#search').val();

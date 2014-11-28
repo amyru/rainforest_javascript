@@ -13,15 +13,3 @@
  *= require_self
  *= require_tree .
  */
-
-html {
-	margin: 0px 20px 10px 20px;
-}
-
-#a {
-	background-color: #bdc3c7;
-}
-
-.list-group {
-	margin-right: 800px;
-}
